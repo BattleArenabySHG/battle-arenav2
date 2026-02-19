@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Stickman Corner Clash</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="startScreen">
+        <h1>Stickman Corner Clash</h1>
+        <div class="theme-selector">
+            <label>Theme:</label>
+            <button class="theme-btn active" onclick="setTheme('neon')">Neon Ninja</button>
+            <button class="theme-btn" onclick="setTheme('light')">Classic Light</button>
+        </div>
+        <p>Select Number of Players</p>
+        <div class="button-group">
+            <button onclick="requestStart(2)">2 Players</button>
+            <button onclick="requestStart(3)">3 Players</button>
+            <button onclick="requestStart(4)">4 Players</button>
+        </div>
+    </div>
+
+    <div id="winScreen">
+        <h2 id="winnerText">PLAYER 1 WINS!</h2>
+        <button class="reset-btn" onclick="location.reload()">Main Menu</button>
+    </div>
+
+    <div id="ui"></div>
+    <div id="mobileControls"></div>
+    <canvas id="gameCanvas"></canvas>
+
+    <script src="script.js"></script>
+</body>
+</html>

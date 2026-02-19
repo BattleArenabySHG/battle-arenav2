@@ -1,0 +1,65 @@
+:root {
+    --neon-accent: #ff007f;
+    --neon-bg: #220022;
+}
+
+html, body {
+    margin: 0; padding: 0;
+    width: 100%; height: 100%;
+    overflow: hidden;
+    background: #121212;
+    font-family: 'Arial', sans-serif;
+    overscroll-behavior: none;
+    position: fixed;
+}
+
+#startScreen, #winScreen {
+    position: absolute; z-index: 100;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    color: white;
+}
+
+#winScreen { display: none; }
+
+.button-group button, .theme-btn, .reset-btn {
+    padding: 12px 24px; margin: 5px;
+    cursor: pointer; background: #333;
+    border: 2px solid #555; color: white;
+    border-radius: 8px; font-weight: bold;
+}
+
+.theme-btn.active {
+    background: var(--neon-accent);
+    box-shadow: 0 0 15px var(--neon-accent);
+}
+
+#ui { position: absolute; width: 100%; height: 100%; pointer-events: none; }
+
+.stats {
+    position: absolute; padding: 12px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 15px; min-width: 150px;
+    border: 1px solid #444;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+.p-pos-0 { top: 10px; left: 10px; }
+.p-pos-1 { top: 10px; right: 10px; text-align: right; }
+.p-pos-2 { bottom: 10px; left: 10px; }
+.p-pos-3 { bottom: 10px; right: 10px; text-align: right; }
+
+.bar-container { width: 130px; height: 12px; background: #111; margin: 6px 0; border-radius: 10px; overflow: hidden; }
+.hp-bar { height: 100%; background: #ff4444; transition: width 0.3s; }
+.stamina-bar { height: 100%; background: #00f2ff; transition: width 0.1s; }
+
+.controls-hint { font-size: 11px; color: #aaa; margin-top: 5px; text-transform: uppercase; font-weight: bold; }
+
+/* Mobile */
+.touch-zone { position: absolute; width: 180px; height: 180px; pointer-events: auto; }
+.joystick-base { width: 80px; height: 80px; background: rgba(255,255,255,0.1); border: 2px solid rgba(255,255,255,0.3); border-radius: 50%; position: absolute; bottom: 0; left: 0; }
+.action-btn { width: 55px; height: 55px; background: rgba(0,0,0,0.6); border: 2px solid white; border-radius: 50%; color: white; display: flex; align-items: center; justify-content: center; position: absolute; font-weight: bold; }
+
+canvas { display: none; touch-action: none; }
