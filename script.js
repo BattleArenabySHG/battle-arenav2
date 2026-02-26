@@ -17,7 +17,6 @@ const keys = {};
 
 window.onkeydown = (e) => { keys[e.key.toLowerCase()] = true; };
 window.onkeyup = (e) => { keys[e.key.toLowerCase()] = false; };
-
 function setTheme(theme) {
     currentTheme = theme;
     document.querySelectorAll('.theme-btn').forEach(btn => {
@@ -27,7 +26,7 @@ function setTheme(theme) {
 
 const controlConfigs = [
     { up: 'w', left: 'a', down: 's', right: 'd', attack: 'f', defend: 'g', label: 'P1', neon: '#ff007f' },
-    { up: 'arrowup', left: 'arrowleft', down: 'arrowdown', right: 'arrowright', attack: 'k', defend: 'l', label: 'P2', neon: '#00f2ff' },
+    { up: 'arrowup', left: 'arrowleft', down: 'arrowdown', right: 'arrowright', attack: 'control', defend: 'alt', label: 'P2', neon: '#00f2ff' },
     { up: 'i', left: 'j', down: 'k', right: 'l', attack: 'h', defend: 'u', label: 'P3', neon: '#bcff00' },
     { up: '8', left: '4', down: '5', right: '6', attack: '1', defend: '2', label: 'P4', neon: '#ff8800' }
 ];
@@ -214,4 +213,5 @@ function loop() {
     } else {
         requestAnimationFrame(loop);
     }
+
 }
